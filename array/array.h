@@ -5,3 +5,7 @@ int find_min (int a[], int n);
 void selection_sort (int a[], int n);
 void remove_element (int a[], int elem, int* n);
 void insert_element (int a[], int elem, int pos, int* n);
+
+int sum_array (int a[], int n);
+void sum_arrays (int a[], int b[], int res[], int n);
+int dot_product (int a[], int b[], int n);

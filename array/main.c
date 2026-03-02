@@ -4,25 +4,28 @@
 int main () {
 	int n = 5;
 	int a[n];
+	int b[n];
 
-	printf ("Immetti %d elementi:\n", n);
+	printf ("Immetti %d elementi nell'array a:\n", n);
 	input_array (a, n);
 
-	printf ("Array originale:\n");
+	printf ("Immetti %d elementi nell'array b:\n", n);
+	input_array (b, n);
+
+	printf ("Array a:\n");
 	output_array (a, n);
 
-	selection_sort(a, n);
+	printf ("Array b:\n");
+	output_array (b, n);
 
-	printf ("Array ordinato:\n");
-	output_array (a, n);
+	printf ("Somma array a: %d\n", sum_array (a, n));
+	printf ("Somma array b: %d\n", sum_array (b, n));
 
-	printf ("Rimuovo elemento 3\n");
-	remove_element (a, 3, &n);
-	output_array (a, n);
+	int res[n];
+	sum_arrays (a, b, res, n);
+	output_array (res, n);
 
-	printf ("Aggiungo elemento 10 in posizione 3\n");
-	insert_element (a, 10, 3, &n);
-	output_array (a, n);
+	printf ("Prodotto scalare array a e b: %d\n", dot_product (a, b, n));
 
 	return 0;
 }

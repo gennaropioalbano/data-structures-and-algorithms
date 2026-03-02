@@ -50,3 +50,22 @@ void insert_element (int a[], int elem, int pos, int* n) {
 		a[i] = a[i - 1];
 	a[pos] = elem;
 }
+
+int sum_array (int a[], int n) {
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+		sum += a[i];
+	return sum;
+}
+
+void sum_arrays (int a[], int b[], int res[], int n) {
+	for (int i = 0; i < n; i++)
+		res[i] = a[i] + b[i];
+}
+
+int dot_product (int a[], int b[], int n) {
+	int prod = 0;
+	for (int i = 0; i < n; i++)
+		prod += a[i] * b[i];
+	return prod;
+}
