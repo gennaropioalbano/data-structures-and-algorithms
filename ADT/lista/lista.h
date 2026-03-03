@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "item.h"
+#include "int.h"
 
 typedef struct Nodo {
 	Item value;
@@ -16,3 +16,5 @@ bool isEmpty (Lista* lista);
 void insertHead (Lista* lista, Item value);
 void removeHead(Lista* lista);
 Item getFirst (Lista* lista);
+
+void sort_list (Lista* lista);

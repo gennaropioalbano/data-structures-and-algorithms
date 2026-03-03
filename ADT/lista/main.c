@@ -4,18 +4,24 @@
 int main () {
 	Lista lista = newList ();
 
-	printf ("Inserisci un valore nella lista:\n");
-	insertHead (&lista, input ());
-	output (getFirst (&lista));
+	printf ("Inserisci 5 elementi:\n");
+	for (int i = 0; i < 5; i++) {
+		insertHead (&lista, input ());
+	}
+
+	printf ("Lista originale:\n");
+	for (Nodo* n = lista.head; n != NULL; n = n -> next) {
+		output (n -> value);
+		printf (" ");
+	}
 	printf ("\n");
 
-	printf ("Inserisci un altro valore nella lista:\n");
-	insertHead (&lista, input ());
-	output (getFirst (&lista));
-	printf ("\n");
-
-	removeHead (&lista);
-	output (getFirst (&lista));
+	sort_list (&lista);
+	printf ("Lista ordinata:\n");
+	for (Nodo* n = lista.head; n != NULL; n = n -> next) {
+		output (n -> value);
+		printf (" ");
+	}
 	printf ("\n");
 
 	return 0;

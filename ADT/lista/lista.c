@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "item.h"
+#include "int.h"
 
 typedef struct Nodo {
 	Item value;
@@ -46,4 +46,14 @@ Item getFirst (Lista* lista) {
 		return -1;
 
 	return lista -> head -> value;
+}
+
+void sort_list (Lista* lista) {
+	for (Nodo* p = lista -> head; p != NULL; p = p -> next)
+		for (Nodo* min = p -> next; min != NULL; min = min -> next)
+			if (confronto (p -> value, min -> value) > 0) {
+				Item temp = p -> value;
+				p -> value = min -> value;
+				min -> value = temp;
+			}
 }
